@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Logical properties do the RTL/LTR mirroring, so component code below
+   should prefer ms-/me-/ps-/pe- (start/end) utilities over left/right ones. */
+
+/* Inline code mentions inside translated prose (e.g. the `groceries` list
+   name in an Arabic sentence) always render in the mono face and force LTR,
+   even mid-sentence, per the Phase 4 design thesis. */
+code {
+  font-family: theme("fontFamily.mono");
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}

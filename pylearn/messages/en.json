@@ -1,0 +1,33 @@
+{
+  "lessonView": {
+    "stepLabel": "Step {current} of {total}",
+    "languageSwitcher": {
+      "en": "EN",
+      "ar": "AR"
+    },
+    "steps": {
+      "motivation": "Motivation",
+      "explanation": "Explanation",
+      "illustration": "Illustration",
+      "video": "Video",
+      "interactiveExamples": "Examples",
+      "guidedPractice": "Guided practice",
+      "codingExercise": "Coding exercise",
+      "quiz": "Quiz",
+      "challenge": "Challenge",
+      "miniProject": "Mini project",
+      "summary": "Summary",
+      "cheatSheet": "Cheat sheet",
+      "commonMistakes": "Common mistakes",
+      "bestPractices": "Best practices"
+    },
+    "runCode": "Run code",
+    "testsPassing": "{passing} of {total} tests passing"
+  },
+  "lessons": {
+    "lists-intro": {
+      "title": "Coding exercise: build a shopping list",
+      "prompt": "Add three items to the <code>groceries</code> list, then print its length."
+    }
+  }
+}
