@@ -1,0 +1,34 @@
+{
+  "lessonView": {
+    "stepLabel": "الخطوة {current} من {total}",
+    "languageSwitcher": {
+      "en": "EN",
+      "ar": "AR"
+    },
+    "steps": {
+      "motivation": "الدافع",
+      "explanation": "الشرح",
+      "illustration": "توضيح مرئي",
+      "video": "فيديو",
+      "interactiveExamples": "أمثلة تفاعلية",
+      "guidedPractice": "تدريب موجّه",
+      "codingExercise": "تمرين برمجي",
+      "quiz": "اختبار قصير",
+      "challenge": "تحدٍّ",
+      "miniProject": "مشروع مصغّر",
+      "summary": "ملخّص",
+      "cheatSheet": "ورقة مرجعية",
+      "commonMistakes": "أخطاء شائعة",
+      "bestPractices": "أفضل الممارسات"
+    },
+    "runCode": "تشغيل الكود",
+    "testsPassing": "{passing} من {total} اختبارات ناجحة",
+    "stepComingSoon": "محتوى هذه الخطوة قيد الإعداد حاليًا — يُرجى المتابعة لاحقًا."
+  },
+  "lessons": {
+    "lists-intro": {
+      "title": "تمرين برمجي: إنشاء قائمة تسوّق",
+      "prompt": "أضف ثلاثة عناصر إلى القائمة <code>groceries</code>، ثم اطبع عدد عناصرها."
+    }
+  }
+}
