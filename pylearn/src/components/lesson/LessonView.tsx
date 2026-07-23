@@ -93,11 +93,7 @@ export function LessonView({ lessonId, starterCode, spineSnippets }: LessonViewP
           </div>
         </div>
 
-<<<<<<< HEAD
         {activeStep === "codingExercise" ? (
-=======
-        {activeStep === "codingExercise" && (
->>>>>>> 679e531eabd33766569f7d1956c56a59e4f1015e
           <>
             <p
               className="mb-4 text-body text-ink-indigo/70"
@@ -107,7 +103,6 @@ export function LessonView({ lessonId, starterCode, spineSnippets }: LessonViewP
             />
             <CodeExercisePane starterCode={starterCode} onRun={handleRun} />
           </>
-<<<<<<< HEAD
         ) : (
           // Temporary placeholder: the other 13 step types (Motivation,
           // Summary, Quiz, etc.) follow the same pattern as the coding
@@ -116,8 +111,6 @@ export function LessonView({ lessonId, starterCode, spineSnippets }: LessonViewP
           <p className="rounded-lg border border-dashed border-ink-indigo/15 p-6 text-body text-ink-indigo/40">
             {t("stepComingSoon")}
           </p>
-=======
->>>>>>> 679e531eabd33766569f7d1956c56a59e4f1015e
         )}
       </div>
 
