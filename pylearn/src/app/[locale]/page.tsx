@@ -17,6 +17,15 @@ export default function LocaleHome() {
       >
         Try the sample lesson →
       </Link>
+
+      <div className="mt-4 flex justify-center gap-4 text-caption">
+        <Link href="/login" className="text-ink-indigo/50 underline">
+          Log in
+        </Link>
+        <Link href="/signup" className="text-ink-indigo/50 underline">
+          Sign up
+        </Link>
+      </div>
     </main>
   );
 }
