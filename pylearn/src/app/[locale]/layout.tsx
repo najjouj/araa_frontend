@@ -1,11 +1,13 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { locales, rtlLocales, type Locale } from "@/i18n/request";
+import { rtlLocales, type Locale } from "@/i18n/request";
 import "../globals.css";
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
+// Note: intentionally no generateStaticParams here. next-intl's server APIs
+// (getMessages) require dynamic rendering, which conflicts with static
+// pre-generation in newer Next.js versions and fails the build. Since this
+// app deploys as a normal server-rendered app on Vercel (not a static
+// export), server-rendering these routes on request is the right default.
 
 export default async function LocaleLayout({
   children,

@@ -22,12 +22,8 @@
       "bestPractices": "Best practices"
     },
     "runCode": "Run code",
-<<<<<<< HEAD
     "testsPassing": "{passing} of {total} tests passing",
     "stepComingSoon": "This step's content is still being built — check back soon."
-=======
-    "testsPassing": "{passing} of {total} tests passing"
->>>>>>> 679e531eabd33766569f7d1956c56a59e4f1015e
   },
   "lessons": {
     "lists-intro": {
