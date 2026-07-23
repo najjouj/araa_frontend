@@ -22,8 +22,12 @@
       "bestPractices": "أفضل الممارسات"
     },
     "runCode": "تشغيل الكود",
+<<<<<<< HEAD
     "testsPassing": "{passing} من {total} اختبارات ناجحة",
     "stepComingSoon": "محتوى هذه الخطوة قيد الإعداد حاليًا — يُرجى المتابعة لاحقًا."
+=======
+    "testsPassing": "{passing} من {total} اختبارات ناجحة"
+>>>>>>> 679e531eabd33766569f7d1956c56a59e4f1015e
   },
   "lessons": {
     "lists-intro": {
