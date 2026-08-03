@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { apiUrl, setToken, fetchCurrentUser } from "@/lib/auth";
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirect");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -28,7 +30,9 @@ export default function LoginPage() {
       setToken(access_token);
 
       const user = await fetchCurrentUser();
-      router.push(user?.role === "teacher" ? "/teacher/classes" : "/dashboard");
+      // An explicit redirect param (e.g. from the join-class page) wins;
+      // otherwise send teachers and students to their respective home.
+      router.push(redirectTo ?? (user?.role === "teacher" ? "/teacher/classes" : "/dashboard"));
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
