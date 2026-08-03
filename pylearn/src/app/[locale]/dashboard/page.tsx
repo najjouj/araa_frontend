@@ -72,6 +72,13 @@ export default function DashboardPage() {
       >
         Continue learning →
       </a>
+
+      <a
+        href="../join-class"
+        className="mt-3 ml-3 inline-block text-caption font-medium text-signal-blue underline"
+      >
+        Join a class
+      </a>
     </main>
   );
 }
