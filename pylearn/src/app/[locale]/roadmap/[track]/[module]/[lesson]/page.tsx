@@ -11,16 +11,10 @@ export default function LessonPage({
   params: { track: string; module: string; lesson: string };
 }) {
   return (
-    <main className="mx-auto max-w-4xl p-6">
+    <main className="mx-auto max-w-7xl p-6">
       <LessonView
         lessonId="lists-intro"
         starterCode={'groceries = ["bread"]\n# write your code below\n\nprint(len(groceries))'}
-        spineSnippets={[
-          "for item in groceries:",
-          "def total(cart): return sum(cart)",
-          "groceries.append(\"eggs\")",
-          "if len(groceries) > 5:",
-        ]}
       />
     </main>
   );
