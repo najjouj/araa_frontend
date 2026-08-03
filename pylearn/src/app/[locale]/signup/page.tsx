@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { apiUrl, setToken } from "@/lib/auth";
 
 export default function SignupPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirect");
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +31,7 @@ export default function SignupPage() {
       }
       const { access_token } = await response.json();
       setToken(access_token);
-      router.push(role === "teacher" ? "/teacher/classes" : "/dashboard");
+      router.push(redirectTo ?? (role === "teacher" ? "/teacher/classes" : "/dashboard"));
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
