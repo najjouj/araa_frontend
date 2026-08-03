@@ -4,23 +4,21 @@ import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { StepRail, LESSON_STEP_ORDER, type LessonStepKey } from "./StepRail";
-import { CodeSpine } from "./CodeSpine";
 import { CodeExercisePane } from "./CodeExercisePane";
 
 interface LessonViewProps {
   lessonId: string;
   starterCode: string;
-  spineSnippets: string[];
 }
 
 /**
- * Top-level lesson screen (Phase 4 mockup). Composes the step rail, the
- * atmospheric code spine, and the active step's content. Only the
- * coding-exercise step is wired up here as the representative slice for
- * Phase 5 — the other 13 step types follow the same content-swap pattern
- * and are straightforward additions once this shell is approved.
+ * Top-level lesson screen (Phase 4 mockup). Composes the step rail and the
+ * active step's content. Only the coding-exercise step is wired up here as
+ * the representative slice for Phase 5 — the other 13 step types follow
+ * the same content-swap pattern and are straightforward additions once
+ * this shell is approved.
  */
-export function LessonView({ lessonId, starterCode, spineSnippets }: LessonViewProps) {
+export function LessonView({ lessonId, starterCode }: LessonViewProps) {
   const t = useTranslations("lessonView");
   const tLesson = useTranslations(`lessons.${lessonId}`);
   const locale = useLocale();
@@ -59,7 +57,7 @@ export function LessonView({ lessonId, starterCode, spineSnippets }: LessonViewP
   }
 
   return (
-    <div className="flex overflow-hidden rounded-xl border border-ink-indigo/10">
+    <div className="flex w-full overflow-hidden rounded-xl border border-ink-indigo/10">
       <StepRail
         activeStep={activeStep}
         completedSteps={completedSteps}
@@ -113,8 +111,6 @@ export function LessonView({ lessonId, starterCode, spineSnippets }: LessonViewP
           </p>
         )}
       </div>
-
-      <CodeSpine snippets={spineSnippets} />
     </div>
   );
 }
