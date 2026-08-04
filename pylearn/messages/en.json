@@ -28,7 +28,99 @@
   "lessons": {
     "lists-intro": {
       "title": "Coding exercise: build a shopping list",
-      "prompt": "Add three items to the <code>groceries</code> list, then print its length."
+      "prompt": "Add three items to the <code>groceries</code> list, then print its length.",
+      "steps": {
+        "motivation": {
+          "body": "Imagine tracking a shopping list, a class roster, or your top five songs — you need somewhere to hold many values together, in order. That's exactly what a list does."
+        },
+        "explanation": {
+          "body": "A list is an ordered collection of values, written with square brackets and separated by commas. You can access any item by its position (its index), starting from 0.",
+          "codeExample": "groceries = [\"bread\", \"milk\", \"eggs\"]\nprint(groceries[0])  # bread\nprint(groceries[2])  # eggs"
+        },
+        "illustration": {
+          "caption": "Each item in a list sits in a numbered box, starting at index 0 — not 1."
+        },
+        "video": {
+          "title": "Lists in 4 minutes",
+          "duration": "4:12",
+          "comingSoon": "Video lessons are being produced — check back soon."
+        },
+        "examples": [
+          {
+            "code": "fruits = [\"apple\", \"banana\"]\nfruits.append(\"cherry\")\nprint(fruits)",
+            "output": "[\"apple\", \"banana\", \"cherry\"]",
+            "note": "append() adds one item to the end."
+          },
+          {
+            "code": "numbers = [10, 20, 30]\nprint(len(numbers))",
+            "output": "3",
+            "note": "len() tells you how many items are in the list."
+          },
+          {
+            "code": "colors = [\"red\", \"green\", \"blue\"]\nprint(colors[-1])",
+            "output": "blue",
+            "note": "Negative indices count from the end — -1 is the last item."
+          }
+        ],
+        "guidedPractice": {
+          "steps": [
+            "Start with an empty list: <code>todo = []</code>",
+            "Add a task with <code>.append(\"Buy milk\")</code>",
+            "Add a second task the same way.",
+            "Print <code>todo</code> to see both tasks together."
+          ]
+        },
+        "quiz": {
+          "question": "What will <code>print(len([\"a\", \"b\", \"c\"]))</code> output?",
+          "options": ["a", "3", "c", "Error"],
+          "correctIndex": 1,
+          "explanation": "len() counts the items in the list — there are three: \"a\", \"b\", and \"c\"."
+        },
+        "challenge": {
+          "prompt": "Build a playlist: create a list of 3 song titles, add a 4th with append(), then print how many songs are in the playlist.",
+          "starterCode": "playlist = [\"Song A\", \"Song B\", \"Song C\"]\n# add a 4th song below\n\nprint(len(playlist))",
+          "note": "This challenge shares the same checker as the coding exercise above for now — a dedicated challenge checker is a later backend addition."
+        },
+        "miniProject": {
+          "title": "Shopping List Manager",
+          "brief": "Extend today's groceries list into a tiny program: let it hold at least 5 items, remove one you no longer need with .remove(), and print the final list and its length.",
+          "note": "Full project submission and review tools are coming in a later update — for now, try this in the coding exercise above."
+        },
+        "summary": {
+          "points": [
+            "A list holds multiple values in order, written with square brackets.",
+            "Access items by index, starting at 0 — and -1 for the last item.",
+            "append() adds an item to the end; len() counts the items."
+          ]
+        },
+        "cheatSheet": {
+          "rows": [
+            { "op": "my_list[0]", "desc": "First item" },
+            { "op": "my_list[-1]", "desc": "Last item" },
+            { "op": "my_list.append(x)", "desc": "Add x to the end" },
+            { "op": "len(my_list)", "desc": "Number of items" },
+            { "op": "my_list.remove(x)", "desc": "Remove first match of x" }
+          ]
+        },
+        "commonMistakes": {
+          "items": [
+            {
+              "title": "Off-by-one errors",
+              "body": "Remember indices start at 0, so the third item is <code>my_list[2]</code>, not <code>my_list[3]</code>."
+            },
+            {
+              "title": "Forgetting append() returns nothing",
+              "body": "<code>my_list = my_list.append(x)</code> sets my_list to None — just call <code>my_list.append(x)</code> on its own line."
+            }
+          ]
+        },
+        "bestPractices": {
+          "items": [
+            "Give lists plural, descriptive names like groceries or scores, not data or list1.",
+            "Use len(my_list) instead of counting manually — it stays correct as the list changes."
+          ]
+        }
+      }
     }
   }
 }
