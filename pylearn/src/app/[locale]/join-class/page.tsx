@@ -43,7 +43,16 @@ export default function JoinClassPage() {
 
       if (!response.ok) {
         const body = await response.json().catch(() => null);
-        throw new Error(body?.detail ?? "Couldn't join that class");
+        const detail = body?.detail ?? "Couldn't join that class";
+        // "Already enrolled" isn't really a failure from the student's
+        // perspective — they're in the class either way — so route it
+        // through the success state instead of a dead-end error.
+        if (response.status === 409) {
+          setStatus("success");
+          setMessage("You're already in this class.");
+          return;
+        }
+        throw new Error(detail);
       }
 
       const data = await response.json();
@@ -93,14 +102,12 @@ export default function JoinClassPage() {
         </button>
       </form>
 
-      {status === "success" && (
-        <a
-          href="../dashboard"
-          className="mt-4 inline-block text-caption font-medium text-signal-blue underline"
-        >
-          Go to your dashboard →
-        </a>
-      )}
+      <a
+        href="../dashboard"
+        className="mt-4 inline-block text-caption font-medium text-signal-blue underline"
+      >
+        Go to your dashboard →
+      </a>
     </main>
   );
 }
