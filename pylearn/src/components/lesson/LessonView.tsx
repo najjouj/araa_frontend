@@ -5,6 +5,21 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { StepRail, LESSON_STEP_ORDER, type LessonStepKey } from "./StepRail";
 import { CodeExercisePane } from "./CodeExercisePane";
+import {
+  MotivationStep,
+  ExplanationStep,
+  IllustrationStep,
+  VideoStep,
+  ExamplesStep,
+  GuidedPracticeStep,
+  QuizStep,
+  ChallengeStep,
+  MiniProjectStep,
+  SummaryStep,
+  CheatSheetStep,
+  MistakesStep,
+  BestPracticesStep,
+} from "./StepContent";
 
 interface LessonViewProps {
   lessonId: string;
@@ -91,7 +106,7 @@ export function LessonView({ lessonId, starterCode }: LessonViewProps) {
           </div>
         </div>
 
-        {activeStep === "codingExercise" ? (
+        {activeStep === "codingExercise" && (
           <>
             <p
               className="mb-4 text-body text-ink-indigo/70"
@@ -101,15 +116,20 @@ export function LessonView({ lessonId, starterCode }: LessonViewProps) {
             />
             <CodeExercisePane starterCode={starterCode} onRun={handleRun} />
           </>
-        ) : (
-          // Temporary placeholder: the other 13 step types (Motivation,
-          // Summary, Quiz, etc.) follow the same pattern as the coding
-          // exercise above but aren't built yet — this makes that explicit
-          // instead of rendering a confusing blank pane.
-          <p className="rounded-lg border border-dashed border-ink-indigo/15 p-6 text-body text-ink-indigo/40">
-            {t("stepComingSoon")}
-          </p>
         )}
+        {activeStep === "motivation" && <MotivationStep />}
+        {activeStep === "explanation" && <ExplanationStep />}
+        {activeStep === "illustration" && <IllustrationStep />}
+        {activeStep === "video" && <VideoStep />}
+        {activeStep === "interactiveExamples" && <ExamplesStep />}
+        {activeStep === "guidedPractice" && <GuidedPracticeStep />}
+        {activeStep === "quiz" && <QuizStep />}
+        {activeStep === "challenge" && <ChallengeStep />}
+        {activeStep === "miniProject" && <MiniProjectStep />}
+        {activeStep === "summary" && <SummaryStep />}
+        {activeStep === "cheatSheet" && <CheatSheetStep />}
+        {activeStep === "commonMistakes" && <MistakesStep />}
+        {activeStep === "bestPractices" && <BestPracticesStep />}
       </div>
     </div>
   );
